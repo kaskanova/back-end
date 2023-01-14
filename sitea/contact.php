@@ -28,12 +28,12 @@
 
     switch (strtoupper($letter)) {
       case "G":
-        $size *= 10 ** 9;
+        $size *= 1024;
         break;
       case "M":
-        $size *= 10 ** 6;
+        $size *= 1024;
       case "K":
-        $size *= 1000;
+        $size *= 1024;
     }
     ?>
     <h3>Адрес</h3>

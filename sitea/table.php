@@ -1,18 +1,31 @@
+<?php
+  $cols = 10;
+  $rows = 10;
+  $color = 'lightblue';
+
+  function drawTable($cols, $rows, $color){
+    echo "<table border='1'>\n";
+        for ($tr = 1; $tr <= $rows; $tr++) {
+          echo "<tr>";
+          for ($td = 1; $td <= $cols; $td++) { 
+            if ($tr == 1 || $td == 1) {echo "<th style = 'background : {$color}; text-align: center;'>" . $tr * $td . "</th>";}
+            else {echo "<td>" . $tr * $td . "</td>";}
+          }
+          echo "</tr>";
+        }
+        echo "</table>";
+  }
+?>
+
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Таблица умножения</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <?php
-  $cols = 10;
-  $rows = 10;
-  $background = "lightblue";
-  ?>
+  
   <div id="header">
     <!-- Верхняя часть страницы -->
     <img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
@@ -41,23 +54,14 @@
       <br />
       <input type='submit' value='Создать' />
     </form>
+
     <!-- Таблица -->
     <?php
-    echo "<table border = '1' width='200'>";
-
-    for ($tr = 1; $tr <= $rows; $tr++) {
-        echo "<tr>";
-           for ($td = 1; $td <= $cols; $td++) { 
-            if ($tr == 1 || $td == 1) {
-              echo "<th style = 'background : {$background}; text-align: center;'>" . $tr * $td . "</th>"; 
-           } else
-                echo "<td>" . $tr * $td . "</td>";
-            }
-        echo "</tr>";
-    }
-    echo "</table>";
+    drawTable($cols, $rows, $color);
     ?>
+    
     <!-- Таблица -->
+
     <!-- Область основного контента -->
   </div>
   <div id="nav">
@@ -79,7 +83,7 @@
   </div>
   <div id="footer">
     <!-- Нижняя часть страницы -->
-    &copy; Супер Мега Веб-мастер, 2000 &ndash; 2021
+    &copy; Супер Мега Веб-мастер, 2000 &ndash; 2023
     <!-- Нижняя часть страницы -->
   </div>
 </body>

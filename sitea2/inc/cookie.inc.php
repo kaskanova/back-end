@@ -20,4 +20,6 @@ if(isset($_COOKIE['lastVisit'])) {
     setcookie("lastVisit", time(), time() + (86400 * 30));
     echo "Это ваш первый визит";
 }
+
+if(date('d-m-Y', $_COOKIE['lastVisit']) != date('d-m-Y'))
 ?>

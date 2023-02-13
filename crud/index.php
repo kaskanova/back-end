@@ -39,9 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 Родительская категория
             </label>
             <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="parent_category" name="parent">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                Добавить категорию
-            </button>
+           
 
                 <?php
                     place_categories($link);
@@ -49,7 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             </select>
         </div>
         <div class="flex items-center justify-between">
-            
+             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Добавить категорию
+            </button>
         </div>
     </form>
 </div>

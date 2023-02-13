@@ -20,20 +20,22 @@ if(isset($_POST['submit'])) {
 
 $sql = "INSERT INTO msgs (name, email, msg) VALUES ('$name', '$email', '$msg')";
 mysqli_query($link, $sql);
-
-
-
 };
-
-
 /* Сохранение записи в БД */
 
 /* Удаление записи из БД */
 if ($_SERVER['REQUEST_METHOD']=='GET') {
     $del = filter_input(INPUT_GET, 'del', FILTER_VALIDATE_INT);
+    if ($del) {
+        $link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME);
+
+        $query = "DELETE FROM msgs WHERE id = $del";
+        $result = mysqli_query($link, $query);
+    }
 }
 /* Удаление записи из БД */
 ?>
+
 <h3>Оставьте запись в нашей Гостевой книге</h3>
 
 <form method="post" action="<?= $_SERVER['REQUEST_URI']?>">
@@ -46,6 +48,7 @@ Email: <br /><input type="text" name="email" /><br />
 <input type="submit" name="submit" value="Отправить!" />
 
 </form>
+
 <?php
 /* Вывод записей из БД */
 $sql = "SELECT id, name, email, msg, UNIX_TIMESTAMP(datetime) as dt FROM msgs ORDER BY id DESC";

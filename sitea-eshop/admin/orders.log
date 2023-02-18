@@ -1,0 +1,17 @@
+имя покупателя|email покупателя|телефонный номер покупателя|адрес покупателя|идентификатор заказа|дата/время заказа
+имя покупателя|email покупателя|телефонный номер покупателя|адрес покупателя|идентификатор заказа|дата/время заказа
+Адель Касканова|kaskanovaadel@gmail.com|56-56-56|Polytech Astana||1676703980
+Адель Касканова|kaskanovaadel@gmail.com|56-56-56|Polytech Astana||1676704022
+Адель Касканова|kaskanovaadel@gmail.com|56-56-56|Polytech Astana||1676704029
+Адель Касканова|kaskanovaadel@gmail.com|56-56-56|Polytech Astana||1676704060
+'Адель Касканова'|'kaskanovaadel@gmail.com'|56-56-56|Polytech Astana||1676704106
+------------------------------------------------------------------------------------------------------------------------
+Правильные варианты:
+
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f079de1521e'|'1676704222'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f079e6ad840'|'1676704230'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f07a0b6bc38'|'1676704267'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f07a9fd4c1d'|'1676704415'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f07e64e8e79'|'1676705380'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f07e823c8d9'|'1676705410'
+'Адель Касканова'|'kaskanovaadel@gmail.com'|'56-56-56'|'Polytech Astana'|'63f07ebcce609'|'1676705468'

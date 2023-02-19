@@ -90,7 +90,7 @@ function saveOrder($datetime) {
         price,
         quantity,
         orderid,
-        datetime) 
+        orderstime) 
         VAlUES (?,?,?,?,?,?,?)';
     if(!mysqli_stmt_prepare($stmt, $sql))
         return false;
@@ -101,5 +101,33 @@ function saveOrder($datetime) {
     mysqli_stmt_close($stmt);
     setcookie('basket', '', time() - 3600);
     return true;
+}
+
+function getOrders() {
+    global $link;
+    if (!is_file(ORDERS_LOG))
+        return false;
+    $orders = file(ORDERS_LOG);
+    $allorders = [];
+    foreach($orders as $order) {
+        list($name, $email, $phone, $address, $orderid, $datetime) = explode("|", $order);
+        $orderinfo = [];
+        $orderinfo["name"] = $name;
+        $orderinfo["email"] = $email;
+        $orderinfo["phone"] = $phone;
+        $orderinfo["address"] = $address;
+        $orderinfo["orderid"] = $orderid;
+        $orderinfo["datetime"] = $datetime;
+        $sql = "SELECT title, author, pubyear, price, quantity
+        FROM orders
+        WHERE orderid = '$orderid' AND datetime = $datetime";
+        if(!$result = mysqli_query($link, $sql))
+        return false;
+        $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_free_result($result);
+        $orderinfo["goods"] = $items;
+        $allorders[] = $orderinfo;
+    }
+    return $allorders;
 }
 ?>

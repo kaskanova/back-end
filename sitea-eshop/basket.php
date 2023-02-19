@@ -47,7 +47,7 @@
 		$i++;
 		$sum += $item['price'] * $item['quantity'];
 	endforeach;
-	?>
+?>
 </table>
 
 <p>Всего товаров в корзине на сумму: <?= $sum ?> руб.</p>

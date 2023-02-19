@@ -7,13 +7,12 @@
 	$phone = $_POST['phone'];
 	$address = $_POST['address'];
 	$orderid = uniqid();
-	$ordertime = time();
-	$order = "'$name'|'$email'|'$phone'|'$address'|'$orderid'|'$ordertime'";
+	$datetime = time();
+	$order = "'$name'|'$email'|'$phone'|'$address'|'$orderid'|'$datetime'";
 	$order_array = [$order];
 	foreach($order_array as $orders) {
 		file_put_contents(ORDERS_LOG, $orders . PHP_EOL, FILE_APPEND);
 	}
-
 	saveOrder($datetime);
 ?>
 <!DOCTYPE html>

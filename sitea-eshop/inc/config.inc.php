@@ -6,7 +6,7 @@ const DB_HOST = "localhost";
 const DB_LOGIN = "root";
 const DB_PASSWORD = "";
 const DB_NAME = "eshop";
-const ORDERS_LOG = "C:\OSPanel\domains\localhost\sitea-eshop\admin\orders.log";
+const ORDERS_LOG = "C:\Users\User\Desktop\OpenServer\domains\localhost\sitea-eshop\admin\orders.log";
 
 $basket = [];
 $count = 0;

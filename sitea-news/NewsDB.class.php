@@ -7,9 +7,9 @@ class NewsDB {
 
     public function __construct() {
         if (is_file(self::DB_NAME) && filesize(self::DB_NAME) > 0) {
-            $this->_db = new PDO("sqlite:" . self::DB_NAME);
+            $this->_db = new PDO("sqlite: news.db");
         } else {
-            $this->_db = new PDO("sqlite:" . self::DB_NAME);
+            $this->_db = new PDO("sqlite: news.db");
             $sql = "CREATE TABLE msgs(
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     title TEXT,
@@ -54,5 +54,12 @@ class NewsDB {
 
         return $stmt->rowCount() > 0;
     }
+
+    public function getNews() {
+        $sql = "SELECT msgs.id as id, title, category.name as category, description, source, datetime FROM msgs, category
+                WHERE category.id = msgs.category ORDER BY msgs.id DESC";
+
+        $stmt = $this->query($sql);
+    }   
 }
 ?>

@@ -38,7 +38,8 @@ if (!empty($_POST)) {
     <input type="submit" value="Добавить!" />
 </form>
 <?php
-
+require_once 'get_news.inc.php';
+getNews()
 ?>
 </body>
 </html>

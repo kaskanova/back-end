@@ -25,8 +25,8 @@ if (!empty($_POST)) {
     <input type="text" name="title" /><br />
     Выберите категорию:<br />
     <select name="category">
-      <option value="1">Политика</option>
-      <option value="2">Культура</option>
+      <option value="1">Музыка</option>
+      <option value="2">Арт</option>
       <option value="3">Спорт</option>
     </select>
     <br />
